@@ -173,8 +173,107 @@ h1 {
   background-color: #f8f9fa;
 }
 
+/* ===== RESPONSIVIDADE MOBILE ===== */
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+/* Tablets e telas médias */
 @media (max-width: 768px) {
+  .app-container {
+    padding: 16px 12px;
+  }
+
+  h1 {
+    font-size: 1.3rem;
+    margin-bottom: 20px;
+  }
+
+  .task-form {
+    flex-direction: column;
+    padding: 16px;
+    margin-bottom: 24px;
+    gap: 10px;
+  }
+
+  .task-form input[type="text"]:first-child {
+    min-width: unset;
+    width: 100%;
+  }
+
+  .task-form input,
+  .task-form select {
+    width: 100%;
+    font-size: 1rem;
+    padding: 12px;
+  }
+
+  .task-form button {
+    width: 100%;
+    padding: 12px;
+    font-size: 1rem;
+  }
+
   .kanban-board {
     flex-direction: column;
+    gap: 16px;
+  }
+
+  .kanban-column {
+    min-height: auto;
+    padding: 12px;
+  }
+
+  .kanban-column h2 {
+    font-size: 1.05rem;
+    margin-bottom: 14px;
+  }
+}
+
+/* Celulares pequenos */
+@media (max-width: 480px) {
+  .app-container {
+    padding: 12px 8px;
+  }
+
+  h1 {
+    font-size: 1.15rem;
+    margin-bottom: 16px;
+  }
+
+  .task-form {
+    padding: 12px;
+    gap: 8px;
+    border-radius: 6px;
+  }
+
+  .task-card {
+    padding: 12px;
+  }
+
+  .task-card h3 {
+    font-size: 1rem;
+  }
+
+  .task-card p {
+    font-size: 0.85rem;
+    margin-bottom: 10px;
+  }
+
+  .task-actions {
+    gap: 8px;
+    margin-bottom: 10px;
+    padding-bottom: 10px;
+  }
+
+  .task-actions button {
+    padding: 6px 12px;
+    font-size: 0.8rem;
+  }
+
+  .task-moves button {
+    font-size: 1.4rem;
+    padding: 8px;
   }
 }
