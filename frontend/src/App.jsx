@@ -85,9 +85,18 @@ function App() {
 
   const columns = ["A Fazer", "Em Progresso", "Concluídas"];
 
+  const obterClasseDaColuna = (status) => {
+    switch (status) {
+      case "A Fazer": return "coluna-a-fazer";
+      case "Em Progresso": return "coluna-em-progresso";
+      case "Concluídas": return "coluna-concluidas";
+      default: return "";
+    }
+  };
+  
   return (
     <div className="app-container">
-      <h1>Mini Kanban</h1>
+      <h1>Kanban Desafio Fullstack Veritas</h1>
       
       <form onSubmit={handleSubmit} className="task-form">
         <input 
@@ -130,7 +139,7 @@ function App() {
 
       <div className="kanban-board">
         {columns.map(status => (
-          <div key={status} className="kanban-column">
+          <div key={status} className={`kanban-column ${obterClasseDaColuna(status)}`}>
             <h2>{status}</h2>
             <div className="task-list">
               {tasks.filter(task => task.status === status).map(task => (
